@@ -157,8 +157,10 @@ section { padding-block: clamp(4.5rem, 10vw, 7.5rem); }
 }
 
 /* ---------- Skills ---------- */
-.logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: 2rem 1rem; }
-.logos li { display: grid; justify-items: center; gap: .6rem; }
+/* Flex centrado: si la última fila tiene pocos logos, queda al medio */
+.logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 1rem; }
+.logos li { display: grid; justify-items: center; gap: .6rem; width: 7.5rem; }
+@media (max-width: 520px) { .logos li { width: 6rem; } }
 .logos img {
   width: 72px; height: 72px; padding: 12px; object-fit: contain;
   background: var(--logo-tile); border-radius: 16px;
