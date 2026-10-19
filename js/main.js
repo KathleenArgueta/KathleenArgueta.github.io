@@ -213,7 +213,7 @@
 
 // ---------- Fotos que aún no existen: la tarjeta muestra su cifra ----------
 (function () {
-  document.querySelectorAll(".card-img img").forEach(function (img) {
+  document.querySelectorAll(".card-img img, .p-shot img").forEach(function (img) {
     function missing() { img.parentElement.classList.add("no-img"); }
     if (img.complete && img.naturalWidth === 0) missing();
     img.addEventListener("error", missing);

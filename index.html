@@ -146,38 +146,50 @@
   </div>
 </section>
 
-<!-- ============ Proyectos técnicos ============ -->
+<!-- ============ Proyectos técnicos ============
+     Capturas: guárdalas en assets/proyectos/ con el nombre de cada <img> (16:10).
+     Mientras falte una captura, la tarjeta muestra su stack en grande. -->
 <section id="proyectos" data-es="Proyectos" data-en="Projects" class="band">
   <div class="wrap">
-    <div class="sec-row" data-reveal>
-      <h2 class="sec-title"><span data-l="es">Proyectos técnicos</span><span data-l="en">Things I've built</span></h2>
-      <div class="filters" role="group" aria-label="Filtrar proyectos">
-        <button type="button" data-filter="all" aria-pressed="true"><span data-l="es">Todos</span><span data-l="en">All</span></button>
-        <button type="button" data-filter="qa" aria-pressed="false">QA</button>
-        <button type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
-        <button type="button" data-filter="soc" aria-pressed="false">SOC</button>
-      </div>
+    <h2 class="big-title" data-reveal><span data-l="es">Proyectos</span><span data-l="en">Projects</span><span class="dot">.</span></h2>
+    <div class="filters" role="group" aria-label="Filtrar proyectos" data-reveal>
+      <button type="button" data-filter="all" aria-pressed="true"><span data-l="es">Todos</span><span data-l="en">All</span></button>
+      <button type="button" data-filter="qa" aria-pressed="false">QA</button>
+      <button type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
+      <button type="button" data-filter="soc" aria-pressed="false">SOC</button>
     </div>
     <div class="projects">
       <a class="project" data-area="qa" data-reveal href="https://github.com/KathleenArgueta/legacy-delivery-refactor" target="_blank" rel="noopener">
-        <span class="p-area">QA</span>
-        <h3>Legacy Delivery</h3>
-        <p><span data-l="es">Refactor con Strategy y bitácoras de cada decisión.</span><span data-l="en">Refactor with Strategy and a log of every decision.</span></p>
+        <figure class="p-shot" data-big="Refactor · Strategy"><img src="assets/proyectos/legacy-delivery.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">QA</span>
+          <h3>Legacy Delivery</h3>
+          <p><span data-l="es">Refactor con Strategy y bitácoras de cada decisión.</span><span data-l="en">Refactor with Strategy and a log of every decision.</span></p>
+        </div>
       </a>
       <a class="project" data-area="cloud" data-reveal href="https://github.com/AlxMC2/CloudShop-Enterprise" target="_blank" rel="noopener">
-        <span class="p-area">Cloud</span>
-        <h3>CloudShop Enterprise</h3>
-        <p><span data-l="es">Catálogo con Lambda, DynamoDB e IAM en Terraform.</span><span data-l="en">Catalog with Lambda, DynamoDB and IAM in Terraform.</span></p>
+        <figure class="p-shot" data-big="Lambda · DynamoDB · Terraform"><img src="assets/proyectos/cloudshop.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">Cloud</span>
+          <h3>CloudShop Enterprise</h3>
+          <p><span data-l="es">Catálogo con Lambda, DynamoDB e IAM en Terraform.</span><span data-l="en">Catalog with Lambda, DynamoDB and IAM in Terraform.</span></p>
+        </div>
       </a>
       <a class="project" data-area="soc" data-reveal href="https://github.com/Reina905/devsecops-pipeline-lab3" target="_blank" rel="noopener">
-        <span class="p-area">SOC</span>
-        <h3>DevSecOps Pipeline</h3>
-        <p><span data-l="es">CodeQL, Gitleaks, Trivy y SBOM en cada cambio.</span><span data-l="en">CodeQL, Gitleaks, Trivy and SBOM on every change.</span></p>
+        <figure class="p-shot" data-big="CodeQL · Gitleaks · Trivy"><img src="assets/proyectos/devsecops.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">SOC</span>
+          <h3>DevSecOps Pipeline</h3>
+          <p><span data-l="es">CodeQL, Gitleaks, Trivy y SBOM en cada cambio.</span><span data-l="en">CodeQL, Gitleaks, Trivy and SBOM on every change.</span></p>
+        </div>
       </a>
       <a class="project" data-area="soc" data-reveal href="https://github.com/TheAlejo999/backend-proyecto-catedra" target="_blank" rel="noopener">
-        <span class="p-area">SOC</span>
-        <h3><span data-l="es">Control de acceso</span><span data-l="en">Access control</span></h3>
-        <p><span data-l="es">Roles, permisos y policies en tres proyectos de equipo.</span><span data-l="en">Roles, permissions and policies in three team projects.</span></p>
+        <figure class="p-shot" data-big="Roles · Permisos · Policies"><img src="assets/proyectos/control-acceso.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">SOC</span>
+          <h3><span data-l="es">Control de acceso</span><span data-l="en">Access control</span></h3>
+          <p><span data-l="es">Roles, permisos y policies en tres proyectos de equipo.</span><span data-l="en">Roles, permissions and policies in three team projects.</span></p>
+        </div>
       </a>
     </div>
   </div>
