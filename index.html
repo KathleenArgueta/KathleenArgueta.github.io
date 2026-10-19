@@ -1,387 +1,294 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kathleen Argueta</title>
-<meta name="description" content="Portafolio de Kathleen Argueta, estudiante de Ingeniería de Software y Negocios Digitales en la ESEN. QA, Cloud y SOC.">
+<meta name="description" content="Portafolio de Kathleen Argueta: Presidenta local de AIESEC y estudiante de Ingeniería de Software y Negocios Digitales en la ESEN. QA, Cloud y SOC.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/styles.css">
-<script>document.documentElement.classList.add("js");</script>
+<script>
+  document.documentElement.classList.add("js");
+  try { var t = localStorage.getItem("ka-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <script src="js/main.js" defer></script>
 </head>
 <body>
 
-<!-- ============ ENCABEZADO ============ -->
 <header class="top">
-  <div class="progress" aria-hidden="true"></div>
   <div class="wrap top-row">
-    <a class="brand" href="#inicio"><span class="m2">m²</span> Kathleen Argueta</a>
+    <a class="brand" href="#inicio">Kathleen Argueta<span>.</span></a>
     <nav id="site-nav" class="nav" aria-label="Secciones">
-      <a href="#sobre-mi"><span data-l="es">Sobre mí</span><span data-l="en">About</span></a>
-      <a href="#impacto"><span data-l="es">Impacto</span><span data-l="en">Impact</span></a>
+      <a href="#skills">Skills</a>
+      <a href="#liderazgo"><span data-l="es">Liderazgo</span><span data-l="en">Leadership</span></a>
       <a href="#proyectos"><span data-l="es">Proyectos</span><span data-l="en">Projects</span></a>
-      <a href="#habilidades"><span data-l="es">Habilidades</span><span data-l="en">Skills</span></a>
+      <a href="#trayectoria"><span data-l="es">Trayectoria</span><span data-l="en">Experience</span></a>
       <a href="#contacto"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
     </nav>
-    <div class="lang" role="group" aria-label="Idioma / Language">
-      <button type="button" data-set="es" aria-pressed="true">ES</button>
-      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set="es" aria-pressed="true">ES</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="theme-btn" id="theme-btn" aria-label="Cambiar tema claro u oscuro">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1Z"/></svg>
+      </button>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">
+        <span data-l="es">Menú</span><span data-l="en">Menu</span>
+      </button>
     </div>
-    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">
-      <span data-l="es">Menú</span><span data-l="en">Menu</span>
-    </button>
   </div>
 </header>
 
 <main>
 
-<!-- ============ 1. INICIO: ¿quién eres? ============ -->
-<section id="inicio" class="hero">
+<!-- ============ Inicio ============ -->
+<section id="inicio" data-es="Inicio" data-en="Home" class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-text" data-reveal>
-      <p class="eyebrow">
-        <span data-l="es">Ingeniería de Software y Negocios Digitales · ESEN · 3.er año</span>
-        <span data-l="en">Software Engineering &amp; Digital Business · ESEN · 3rd year</span>
+    <div data-reveal>
+      <p class="hello"><span data-l="es">Hola, soy</span><span data-l="en">Hi, I'm</span></p>
+      <h1>Kathleen Argueta</h1>
+      <p class="tagline">
+        <span data-l="es">Procesos claros para que las personas resuelvan por sí mismas.</span>
+        <span data-l="en">Clear processes so people can solve problems on their own.</span>
       </p>
-      <h1>
-        <span data-l="es">Procesos claros para que <span class="hl">las personas</span> resuelvan por sí mismas.</span>
-        <span data-l="en">Clear processes so <span class="hl">people</span> can solve problems on their own.</span>
-      </h1>
       <p class="lede">
-        <span data-l="es">Uno lo técnico (calidad, nube y seguridad) con lo humano (liderazgo, comunicación y visión de negocio). Busco mi primera pasantía en:</span>
-        <span data-l="en">I bring together the technical side (quality, cloud and security) and the human side (leadership, communication and business vision). I am looking for my first internship in:</span>
+        <span data-l="es">Presidenta local de AIESEC y estudiante de Ingeniería de Software y Negocios Digitales en la ESEN. Busco mi primera pasantía en <strong>QA, Cloud o SOC</strong>.</span>
+        <span data-l="en">AIESEC Local Committee President and Software Engineering &amp; Digital Business student at ESEN. Looking for my first internship in <strong>QA, Cloud or SOC</strong>.</span>
       </p>
-      <ul class="roles">
-        <li>QA Engineer</li>
-        <li>Cloud Engineer</li>
-        <li>SOC Intern</li>
-      </ul>
-      <div class="cta">
-        <a class="btn btn-primary" href="#proyectos"><span data-l="es">Ver proyectos</span><span data-l="en">See projects</span></a>
-        <a class="btn" href="https://www.linkedin.com/in/kathleenargueta" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <p class="cta">
+        <a class="btn btn-primary" href="#contacto"><span data-l="es">Contáctame</span><span data-l="en">Get in touch</span></a>
+        <a class="icon-link" href="https://www.linkedin.com/in/kathleenargueta" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://github.com/KathleenArgueta" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg>
+        </a>
+      </p>
     </div>
     <figure class="portrait" data-reveal>
-      <img src="assets/kathleen.jpg" width="608" height="712" alt="Kathleen Argueta">
+      <img src="assets/kathleen.png" width="608" height="712" alt="Kathleen Argueta">
     </figure>
   </div>
 </section>
 
-<!-- ============ 2. SOBRE MÍ: ¿cuál es tu historia? ============ -->
-<section id="sobre-mi">
+<!-- ============ Skills ============ -->
+<section id="skills" data-es="Skills" data-en="Skills" class="band">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow"><span data-l="es">Sobre mí</span><span data-l="en">About me</span></p>
-      <h2><span data-l="es">Liderar soluciones en mi metro cuadrado</span><span data-l="en">Leading solutions in my own corner of the world</span></h2>
-    </div>
-
-    <div class="about">
-      <div class="prose" data-reveal>
-        <div data-l="es">
-          <p>Kathleen Argueta es estudiante de tercer año de Ingeniería de Software y Negocios Digitales en la Escuela Superior de Economía y Negocios (ESEN) y está comprometida con liderar soluciones en su metro cuadrado. A los 17 años dejó La Unión gracias a la beca de la Fundación Gloria de Kriete; actualmente, como Presidenta local de AIESEC, impulsa oportunidades de desarrollo de liderazgo e intercambios internacionales en el oriente de El Salvador.</p>
-          <p>Su enfoque de trabajo consiste en estandarizar procesos y fundamentar las decisiones en datos, de modo que las personas que los ejecutan los comprendan y puedan responder ante imprevistos. Bajo este enfoque, lideró el desarrollo de un sistema interno, actualmente en fase piloto, que redujo de 15 a 5 el número de personas dedicadas a un proceso manual y permitió al equipo reorientar su esfuerzo hasta incrementar en 200% las ventas de su producto foco en seis meses.</p>
-          <p>Busca su primera pasantía en QA, Cloud o SOC, con el propósito de integrar la calidad y la seguridad de los sistemas con el talento humano de los equipos.</p>
-        </div>
-        <div data-l="en">
-          <p>Kathleen Argueta is a third-year Software Engineering and Digital Business student at the Escuela Superior de Economía y Negocios (ESEN), committed to leading solutions in her own corner of the world. At 17, she left La Unión thanks to a scholarship from the Gloria de Kriete Foundation. Today, as Local Committee President of AIESEC, she brings leadership development and international exchange opportunities to eastern El Salvador.</p>
-          <p>Her approach is to standardize processes and ground decisions in data, so the people who run those processes understand them and can respond to the unexpected. With this approach, she led the development of an internal system, now in its pilot phase, that reduced the number of people dedicated to a manual process from 15 to 5 and allowed the team to redirect its efforts, increasing sales of its flagship product by 200% in six months.</p>
-          <p>She is seeking her first internship in QA, Cloud, or SOC, with the goal of bringing together system quality and security with the human talent of teams.</p>
-        </div>
-      </div>
-
-      <aside class="traits" data-reveal>
-        <h3 class="label"><span data-l="es">Cómo me describe mi equipo</span><span data-l="en">How my team describes me</span></h3>
-        <ul>
-          <li><strong><span data-l="es">Honestidad</span><span data-l="en">Honesty</span></strong></li>
-          <li><strong><span data-l="es">Liderazgo</span><span data-l="en">Leadership</span></strong></li>
-          <li><strong><span data-l="es">Resiliencia</span><span data-l="en">Resilience</span></strong>
-            <span data-l="es">Busco soluciones aunque dude.</span><span data-l="en">I look for solutions even when I have doubts.</span></li>
-        </ul>
-      </aside>
-    </div>
-
-    <h3 class="label path-title" data-reveal><span data-l="es">Mi camino</span><span data-l="en">My path</span></h3>
-    <ol class="path">
-      <li data-reveal>
-        <span class="when">La Unión</span>
-        <p><span data-l="es">Hija única. Salí de casa a los 17 años; mi familia y mi comunidad me esperan de vuelta con oportunidades.</span><span data-l="en">Only child. I left home at 17; my family and my community are waiting for me to come back with opportunities.</span></p>
-      </li>
-      <li data-reveal>
-        <span class="when">2022–2023</span>
-        <p><span data-l="es">Becaria de la Fundación Gloria de Kriete (programa Oportunidades). Ahí me enamoré de STEAM: software, diseño 3D e ingeniería espacial.</span><span data-l="en">Gloria de Kriete Foundation scholar (Oportunidades program). That is where I fell in love with STEAM: software, 3D design and space engineering.</span></p>
-      </li>
-      <li data-reveal>
-        <span class="when">ESEN</span>
-        <p><span data-l="es">Becada en Ingeniería de Software y Negocios Digitales. Hoy estoy en tercer año.</span><span data-l="en">Scholarship student in Software Engineering and Digital Business, now in my third year.</span></p>
-      </li>
-      <li data-reveal>
-        <span class="when"><span data-l="es">Comunidad</span><span data-l="en">Community</span></span>
-        <p><span data-l="es">Voluntariado de huertos en un instituto, inspirado en el trabajo de agricultor de mi abuelo.</span><span data-l="en">A garden volunteering project at a high school, inspired by my grandfather's work as a farmer.</span></p>
-      </li>
-    </ol>
+    <h2 class="sec-title" data-reveal><span data-l="es">Lo que sé hacer</span><span data-l="en">I'm good at this</span></h2>
+    <ul class="logos" data-reveal>
+      <li><img src="assets/skills/python-original.svg" alt="" width="56" height="56"><span>Python</span></li>
+      <li><img src="assets/skills/amazonwebservices-original-wordmark.svg" alt="" width="56" height="56"><span>AWS</span></li>
+      <li><img src="assets/skills/terraform-original.svg" alt="" width="56" height="56"><span>Terraform</span></li>
+      <li><img src="assets/skills/kubernetes-original.svg" alt="" width="56" height="56"><span>Kubernetes</span></li>
+      <li><img src="assets/skills/githubactions-original.svg" alt="" width="56" height="56"><span>GitHub Actions</span></li>
+      <li><img src="assets/skills/java-original.svg" alt="" width="56" height="56"><span>Java</span></li>
+      <li><img src="assets/skills/csharp-original.svg" alt="" width="56" height="56"><span>C#</span></li>
+      <li><img src="assets/skills/microsoftsqlserver-original.svg" alt="" width="56" height="56"><span>SQL Server</span></li>
+      <li><img src="assets/skills/laravel-original.svg" alt="" width="56" height="56"><span>Laravel</span></li>
+      <li><img src="assets/skills/nestjs-original.svg" alt="" width="56" height="56"><span>NestJS</span></li>
+      <li><img src="assets/skills/javascript-original.svg" alt="" width="56" height="56"><span>JavaScript</span></li>
+      <li><img src="assets/skills/html5-original.svg" alt="" width="56" height="56"><span>HTML5</span></li>
+      <li><img src="assets/skills/css3-original.svg" alt="" width="56" height="56"><span>CSS3</span></li>
+      <li><img src="assets/skills/flutter-original.svg" alt="" width="56" height="56"><span>Flutter</span></li>
+      <li><img src="assets/skills/firebase-original.svg" alt="" width="56" height="56"><span>Firebase</span></li>
+      <li><img src="assets/skills/figma-original.svg" alt="" width="56" height="56"><span>Figma</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- ============ 3. IMPACTO: ¿qué has logrado? ============ -->
-<section id="impacto">
+<!-- ============ Liderazgo (AIESEC) ============
+     Fotos: guárdalas en assets/aiesec/ con el nombre de cada <img>.
+     Mientras falte una foto, la tarjeta muestra su cifra en grande. -->
+<section id="liderazgo" data-es="Liderazgo" data-en="Leadership">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow"><span data-l="es">Impacto</span><span data-l="en">Impact</span></p>
-      <h2><span data-l="es">Dos historias, con sus cifras</span><span data-l="en">Two stories, with their numbers</span></h2>
-    </div>
+    <h2 class="sec-title" data-reveal><span data-l="es">Lo que he liderado</span><span data-l="en">What I've led</span></h2>
 
-    <div class="stories">
-      <!-- Historia 1: sistema interno -->
-      <article class="story" data-reveal>
-        <p class="label"><span data-l="es">Integración de sistemas</span><span data-l="en">Systems integration</span></p>
-        <h3><span data-l="es">Sistema interno de contacto por WhatsApp</span><span data-l="en">Internal WhatsApp contact system</span></h3>
-        <div class="figures">
-          <div><b>15 → 5</b><span data-l="es">personas en el proceso</span><span data-l="en">people on the process</span></div>
-          <div><b>+200%</b><span data-l="es">ventas del producto foco en 6 meses</span><span data-l="en">flagship product sales in 6 months</span></div>
+    <div class="cards">
+      <article class="card" data-reveal>
+        <figure class="card-img" data-big="70%"><img src="assets/aiesec/talento-humano.jpg" alt="" loading="lazy"></figure>
+        <div class="card-body">
+          <p class="kicker">AIESEC · <span data-l="es">entidad nacional en Canadá, remoto</span><span data-l="en">national entity in Canada, remote</span></p>
+          <h3><span data-l="es">Manager de Talento Humano</span><span data-l="en">Human Talent Manager</span></h3>
+          <p><span data-l="es">70% de retención de miembros en el semestre y +60% en su desarrollo de liderazgo.</span><span data-l="en">70% member retention over the semester and +60% in their leadership development.</span></p>
         </div>
-        <div class="people" aria-hidden="true">
-          <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
-        <dl class="case-fields">
-          <dt><span data-l="es">Problema</span><span data-l="en">Problem</span></dt>
-          <dd><span data-l="es">Un proceso de contacto manual ocupaba a 15 personas del equipo.</span><span data-l="en">A manual contact process kept 15 people on the team busy.</span></dd>
-          <dt><span data-l="es">Mi papel</span><span data-l="en">My role</span></dt>
-          <dd><span data-l="es">Lideré el desarrollo del sistema.</span><span data-l="en">I led the development of the system.</span></dd>
-          <dt><span data-l="es">Decisión</span><span data-l="en">Decision</span></dt>
-          <dd><span data-l="es">Automatizar el contacto con la API de WhatsApp y calendarios de vacaciones.</span><span data-l="en">Automate contact through the WhatsApp API and vacation calendars.</span></dd>
-          <dt><span data-l="es">Resultado</span><span data-l="en">Result</span></dt>
-          <dd><span data-l="es">En fase piloto. El equipo liberado reorientó su esfuerzo hacia las ventas.</span><span data-l="en">In its pilot phase. The freed-up team redirected its effort toward sales.</span></dd>
-        </dl>
       </article>
 
-      <!-- Historia 2: AIESEC -->
-      <article class="story" data-reveal>
-        <p class="label"><span data-l="es">Liderazgo</span><span data-l="en">Leadership</span></p>
-        <h3><span data-l="es">Presidenta local de AIESEC en ESEN</span><span data-l="en">AIESEC Local Committee President at ESEN</span></h3>
-        <div class="figures">
-          <div><b>10+</b><span data-l="es">iniciativas ambientales y sociales</span><span data-l="en">environmental and social initiatives</span></div>
-          <div><b>4</b><span data-l="es">países y 3 congresos internacionales</span><span data-l="en">countries and 3 international conferences</span></div>
+      <article class="card" data-reveal>
+        <figure class="card-img" data-big="ODS 1 · 14 · 15"><img src="assets/aiesec/voluntarios.jpg" alt="" loading="lazy"></figure>
+        <div class="card-body">
+          <p class="kicker">AIESEC · <span data-l="es">voluntarios internacionales</span><span data-l="en">international volunteers</span></p>
+          <h3><span data-l="es">Abrir El Salvador al mundo</span><span data-l="en">Opening El Salvador to the world</span></h3>
+          <p><span data-l="es">Lideré la iniciativa del sitio web para voluntarios. Próxima meta: proyectos de Fin de la pobreza, Vida submarina y Vida de ecosistemas terrestres.</span><span data-l="en">I led the volunteer website initiative. Next goal: projects for No Poverty, Life Below Water and Life on Land.</span></p>
         </div>
-        <ul class="bullets">
-          <li><span data-l="es">Limpieza de playas, reforestación, liberación de tortugas, Hospital Bloom y ferias de empleo.</span><span data-l="en">Beach clean-ups, reforestation, sea turtle releases, Hospital Bloom and job fairs.</span></li>
-          <li><span data-l="es">Lideré de forma remota el área de talento humano en Canadá.</span><span data-l="en">I led the human talent area in Canada remotely.</span></li>
-          <li><span data-l="es">Expansión al oriente: 12 de 30 miembros en un semestre. En enero abre un comité propio de 30 personas.</span><span data-l="en">Expansion to the east: 12 of 30 members in one semester. A dedicated 30-person committee opens in January.</span></li>
-          <li><span data-l="es">Un sitio web para voluntarios internacionales que quieren venir a El Salvador.</span><span data-l="en">A website for international volunteers who want to come to El Salvador.</span></li>
-          <li><span data-l="es">Próxima meta: recibir voluntarios del exterior para proyectos en zonas protegidas, de vida marina y de pobreza.</span><span data-l="en">Next goal: welcome volunteers from abroad for projects in protected areas, marine life and poverty.</span></li>
-        </ul>
+      </article>
+
+      <article class="card" data-reveal>
+        <figure class="card-img" data-big="12 / 30"><img src="assets/aiesec/comite.jpg" alt="" loading="lazy"></figure>
+        <div class="card-body">
+          <p class="kicker">AIESEC · <span data-l="es">expansión</span><span data-l="en">expansion</span></p>
+          <h3><span data-l="es">Un comité propio para el oriente</span><span data-l="en">A committee of its own for the east</span></h3>
+          <p><span data-l="es">12 de 30 miembros llegaron del oriente en un semestre. En enero abre allí un comité de 30 personas.</span><span data-l="en">12 of 30 members came from the east in one semester. A 30-person committee opens there in January.</span></p>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <figure class="card-img" data-big="10+"><img src="assets/aiesec/iniciativas.jpg" alt="" loading="lazy"></figure>
+        <div class="card-body">
+          <p class="kicker">AIESEC · <span data-l="es">Presidenta local en ESEN</span><span data-l="en">Local Committee President at ESEN</span></p>
+          <h3><span data-l="es">Iniciativas sociales y ambientales</span><span data-l="en">Social and environmental initiatives</span></h3>
+          <p><span data-l="es">Playas, reforestación, tortugas, Hospital Bloom y ferias de empleo. 3 congresos internacionales y 4 países.</span><span data-l="en">Beaches, reforestation, sea turtles, Hospital Bloom and job fairs. 3 international conferences and 4 countries.</span></p>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ 4. PROYECTOS: ¿sabes hacer el trabajo? ============ -->
-<!-- Fotos: guarda cada captura en assets/proyectos/ con el nombre indicado en su <img>. Si falta, se muestra un espacio vacío. -->
-<section id="proyectos">
+<!-- ============ Proyectos técnicos ============
+     Capturas: guárdalas en assets/proyectos/ con el nombre de cada <img> (16:10).
+     Mientras falte una captura, la tarjeta muestra su stack en grande. -->
+<section id="proyectos" data-es="Proyectos" data-en="Projects" class="band">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow"><span data-l="es">Proyectos</span><span data-l="en">Projects</span></p>
-      <h2><span data-l="es">Ordenados por el puesto que busco</span><span data-l="en">Organized by the role I am looking for</span></h2>
-    </div>
-
+    <h2 class="big-title" data-reveal><span data-l="es">Proyectos</span><span data-l="en">Projects</span><span class="dot">.</span></h2>
     <div class="filters" role="group" aria-label="Filtrar proyectos" data-reveal>
       <button type="button" data-filter="all" aria-pressed="true"><span data-l="es">Todos</span><span data-l="en">All</span></button>
       <button type="button" data-filter="qa" aria-pressed="false">QA</button>
       <button type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
       <button type="button" data-filter="soc" aria-pressed="false">SOC</button>
-      <button type="button" data-filter="negocio" aria-pressed="false"><span data-l="es">Negocio digital</span><span data-l="en">Digital business</span></button>
     </div>
-
     <div class="projects">
-
-      <article class="project" data-area="qa" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/legacy-delivery.jpg" alt="" loading="lazy"><figcaption>Legacy Delivery</figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag">QA</span><span class="stack">Strategy · Refactor</span></div>
+      <a class="project" data-area="qa" data-reveal href="https://github.com/KathleenArgueta/legacy-delivery-refactor" target="_blank" rel="noopener">
+        <figure class="p-shot" data-big="Refactor · Strategy"><img src="assets/proyectos/legacy-delivery.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">QA</span>
           <h3>Legacy Delivery</h3>
-          <p class="summary"><span data-l="es">Cómo razono sobre la calidad del código: qué problema vi, qué patrón apliqué y cuál descarté.</span><span data-l="en">How I reason about code quality: the problem I saw, the pattern I applied and the one I ruled out.</span></p>
-          <details>
-            <summary><span data-l="es">Ver caso</span><span data-l="en">View case</span></summary>
-            <dl class="case-fields">
-              <dt><span data-l="es">Problema</span><span data-l="en">Problem</span></dt>
-              <dd><span data-l="es">Un sistema de entregas heredado con lógica de descuentos y pagos difícil de extender.</span><span data-l="en">A legacy delivery system with discount and payment logic that was hard to extend.</span></dd>
-              <dt><span data-l="es">Mi papel</span><span data-l="en">My role</span></dt>
-              <dd><span data-l="es">Proyecto individual de clase.</span><span data-l="en">Individual class project.</span></dd>
-              <dt><span data-l="es">Decisión</span><span data-l="en">Decision</span></dt>
-              <dd><span data-l="es">Descuentos con el patrón Strategy y pagos con procesadores separados.</span><span data-l="en">Discounts with the Strategy pattern and payments with separate processors.</span></dd>
-              <dt><span data-l="es">Resultado</span><span data-l="en">Result</span></dt>
-              <dd><span data-l="es">Refactor con bitácoras que explican cada decisión, compartido con autorización del catedrático.</span><span data-l="en">A refactor with logs explaining each decision, shared with the professor's permission.</span></dd>
-            </dl>
-            <a href="https://github.com/KathleenArgueta/legacy-delivery-refactor" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a>
-          </details>
+          <p><span data-l="es">Refactor con Strategy y bitácoras de cada decisión.</span><span data-l="en">Refactor with Strategy and a log of every decision.</span></p>
         </div>
-      </article>
-
-      <article class="project is-pending" data-area="qa" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/qa.jpg" alt="" loading="lazy"><figcaption><span data-l="es">En construcción</span><span data-l="en">In progress</span></figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag">QA</span><span class="stack"><span data-l="es">Proyecto individual</span><span data-l="en">Individual project</span></span></div>
-          <h3><span data-l="es">Proyecto de QA</span><span data-l="en">QA project</span></h3>
-          <p class="summary"><span data-l="es">Mi propio proyecto de pruebas de software, con plan de pruebas, ejecución y reporte. Próximamente.</span><span data-l="en">My own software testing project, with a test plan, execution and report. Coming soon.</span></p>
-        </div>
-      </article>
-
-      <article class="project" data-area="cloud" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/cloudshop.jpg" alt="" loading="lazy"><figcaption>CloudShop Enterprise</figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag">Cloud</span><span class="stack">Terraform · AWS</span></div>
+      </a>
+      <a class="project" data-area="cloud" data-reveal href="https://github.com/AlxMC2/CloudShop-Enterprise" target="_blank" rel="noopener">
+        <figure class="p-shot" data-big="Lambda · DynamoDB · Terraform"><img src="assets/proyectos/cloudshop.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">Cloud</span>
           <h3>CloudShop Enterprise</h3>
-          <p class="summary"><span data-l="es">El catálogo de una tienda en la nube, sin servidores y definido en código.</span><span data-l="en">A store's cloud catalog, serverless and defined in code.</span></p>
-          <details>
-            <summary><span data-l="es">Ver caso</span><span data-l="en">View case</span></summary>
-            <dl class="case-fields">
-              <dt><span data-l="es">Problema</span><span data-l="en">Problem</span></dt>
-              <dd><span data-l="es">El catálogo necesitaba infraestructura que se pudiera crear y repetir desde código.</span><span data-l="en">The catalog needed infrastructure that could be created and reproduced from code.</span></dd>
-              <dt><span data-l="es">Mi papel</span><span data-l="en">My role</span></dt>
-              <dd><span data-l="es">Proyecto de equipo. Construí el módulo de catálogo (unas 500 líneas de Terraform).</span><span data-l="en">Team project. I built the catalog module (about 500 lines of Terraform).</span></dd>
-              <dt><span data-l="es">Decisión</span><span data-l="en">Decision</span></dt>
-              <dd><span data-l="es">Lambda y DynamoDB, con permisos IAM definidos en el mismo código.</span><span data-l="en">Lambda and DynamoDB, with IAM permissions defined in the same code.</span></dd>
-              <dt><span data-l="es">Resultado</span><span data-l="en">Result</span></dt>
-              <dd><span data-l="es">Módulo de catálogo como infraestructura como código.</span><span data-l="en">The catalog module delivered as infrastructure as code.</span></dd>
-            </dl>
-            <a href="https://github.com/AlxMC2/CloudShop-Enterprise" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a>
-          </details>
+          <p><span data-l="es">Catálogo con Lambda, DynamoDB e IAM en Terraform.</span><span data-l="en">Catalog with Lambda, DynamoDB and IAM in Terraform.</span></p>
         </div>
-      </article>
-
-      <article class="project" data-area="soc" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/devsecops.jpg" alt="" loading="lazy"><figcaption>DevSecOps Pipeline</figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag">SOC</span><span class="stack">GitHub Actions · Terraform</span></div>
+      </a>
+      <a class="project" data-area="soc" data-reveal href="https://github.com/Reina905/devsecops-pipeline-lab3" target="_blank" rel="noopener">
+        <figure class="p-shot" data-big="CodeQL · Gitleaks · Trivy"><img src="assets/proyectos/devsecops.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">SOC</span>
           <h3>DevSecOps Pipeline</h3>
-          <p class="summary"><span data-l="es">Revisiones de seguridad automáticas en cada cambio antes de llegar a producción.</span><span data-l="en">Automated security checks on every change before it reaches production.</span></p>
-          <details>
-            <summary><span data-l="es">Ver caso</span><span data-l="en">View case</span></summary>
-            <dl class="case-fields">
-              <dt><span data-l="es">Problema</span><span data-l="en">Problem</span></dt>
-              <dd><span data-l="es">Encontrar vulnerabilidades, secretos expuestos y dependencias riesgosas a tiempo.</span><span data-l="en">Catch vulnerabilities, exposed secrets and risky dependencies early.</span></dd>
-              <dt><span data-l="es">Mi papel</span><span data-l="en">My role</span></dt>
-              <dd><span data-l="es">Proyecto de equipo. Escribí el ambiente dev en Terraform, la configuración de Sonar y pruebas.</span><span data-l="en">Team project. I wrote the dev environment in Terraform, the Sonar configuration and tests.</span></dd>
-              <dt><span data-l="es">Decisión</span><span data-l="en">Decision</span></dt>
-              <dd><span data-l="es">Un pipeline con CodeQL, Gitleaks y Trivy que además genera un SBOM.</span><span data-l="en">A pipeline with CodeQL, Gitleaks and Trivy that also generates an SBOM.</span></dd>
-              <dt><span data-l="es">Resultado</span><span data-l="en">Result</span></dt>
-              <dd><span data-l="es">Controles de seguridad integrados en el flujo de entrega.</span><span data-l="en">Security checks built into the delivery flow.</span></dd>
-            </dl>
-            <a href="https://github.com/Reina905/devsecops-pipeline-lab3" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a>
-          </details>
+          <p><span data-l="es">CodeQL, Gitleaks, Trivy y SBOM en cada cambio.</span><span data-l="en">CodeQL, Gitleaks, Trivy and SBOM on every change.</span></p>
         </div>
-      </article>
-
-      <article class="project" data-area="soc" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/flotas.jpg" alt="" loading="lazy"><figcaption><span data-l="es">Gestión de Flotas</span><span data-l="en">Fleet Management</span></figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag">SOC</span><span class="stack">Laravel</span></div>
-          <h3><span data-l="es">Sistema de Gestión de Flotas</span><span data-l="en">Fleet Management System</span></h3>
-          <p class="summary"><span data-l="es">Quién puede ver y registrar qué en combustible y mantenimiento.</span><span data-l="en">Who can see and record what in fuel and maintenance.</span></p>
-          <details>
-            <summary><span data-l="es">Ver caso</span><span data-l="en">View case</span></summary>
-            <dl class="case-fields">
-              <dt><span data-l="es">Problema</span><span data-l="en">Problem</span></dt>
-              <dd><span data-l="es">Cada persona de la flota debe acceder solo a lo que le corresponde.</span><span data-l="en">Each person in the fleet should only access what belongs to them.</span></dd>
-              <dt><span data-l="es">Mi papel</span><span data-l="en">My role</span></dt>
-              <dd><span data-l="es">Proyecto de equipo. Roles, permisos, policies, seeders de roles y README (13 de 94 commits).</span><span data-l="en">Team project. Roles, permissions, policies, role seeders and the README (13 of 94 commits).</span></dd>
-              <dt><span data-l="es">Decisión</span><span data-l="en">Decision</span></dt>
-              <dd><span data-l="es">Policies por recurso y roles sembrados para que cada ambiente arranque con las mismas reglas.</span><span data-l="en">Per-resource policies and seeded roles so every environment starts with the same rules.</span></dd>
-              <dt><span data-l="es">Resultado</span><span data-l="en">Result</span></dt>
-              <dd><span data-l="es">Reglas de acceso para combustible y mantenimiento, documentadas para el equipo.</span><span data-l="en">Access rules for fuel and maintenance, documented for the team.</span></dd>
-            </dl>
-            <a href="https://github.com/TheAlejo999/backend-proyecto-catedra" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a>
-          </details>
+      </a>
+      <a class="project" data-area="soc" data-reveal href="https://github.com/TheAlejo999/backend-proyecto-catedra" target="_blank" rel="noopener">
+        <figure class="p-shot" data-big="Roles · Permisos · Policies"><img src="assets/proyectos/control-acceso.png" alt="" loading="lazy"></figure>
+        <div class="p-body">
+          <span class="p-area">SOC</span>
+          <h3><span data-l="es">Control de acceso</span><span data-l="en">Access control</span></h3>
+          <p><span data-l="es">Roles, permisos y policies en tres proyectos de equipo.</span><span data-l="en">Roles, permissions and policies in three team projects.</span></p>
         </div>
-      </article>
-
-      <article class="project" data-area="soc" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/control-acceso.jpg" alt="" loading="lazy"><figcaption><span data-l="es">Control de acceso</span><span data-l="en">Access control</span></figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag">SOC</span><span class="stack">Laravel · Spatie</span></div>
-          <h3><span data-l="es">Control de acceso en tres proyectos</span><span data-l="en">Access control across three projects</span></h3>
-          <p class="summary"><span data-l="es">En tres equipos distintos me encargué de roles, permisos y policies: la base de la seguridad de un sistema.</span><span data-l="en">In three different teams I owned roles, permissions and policies: the foundation of a system's security.</span></p>
-          <details>
-            <summary><span data-l="es">Ver proyectos</span><span data-l="en">View projects</span></summary>
-            <ul class="bullets">
-              <li><a href="https://github.com/TheAlejo999/backend-proyecto-catedra" target="_blank" rel="noopener"><span data-l="es">Flotas</span><span data-l="en">Fleet</span></a>: <span data-l="es">combustible y mantenimiento</span><span data-l="en">fuel and maintenance</span></li>
-              <li><a href="https://github.com/Reina905/citas_medicas_backend" target="_blank" rel="noopener"><span data-l="es">Citas médicas</span><span data-l="en">Medical appointments</span></a>: <span data-l="es">citas, expedientes y horarios</span><span data-l="en">appointments, records and schedules</span></li>
-              <li><a href="https://github.com/AlejandroDuron/Biblioteca_testing" target="_blank" rel="noopener"><span data-l="es">Biblioteca</span><span data-l="en">Library</span></a>: <span data-l="es">roles con Spatie, BookPolicy y LoanPolicy</span><span data-l="en">roles with Spatie, BookPolicy and LoanPolicy</span></li>
-            </ul>
-          </details>
-        </div>
-      </article>
-
-      <article class="project" data-area="negocio" data-reveal>
-        <figure class="shot"><img src="assets/proyectos/cuponera.jpg" alt="" loading="lazy"><figcaption>La Cuponera</figcaption></figure>
-        <div class="project-body">
-          <div class="project-meta"><span class="tag"><span data-l="es">Negocio digital</span><span data-l="en">Digital business</span></span><span class="stack">React · Supabase</span></div>
-          <h3>La Cuponera</h3>
-          <p class="summary"><span data-l="es">Una tienda de cupones con reglas de negocio claras. Mi mayor aporte: 33 de 54 commits.</span><span data-l="en">A coupon store with clear business rules. My largest contribution: 33 of 54 commits.</span></p>
-          <details>
-            <summary><span data-l="es">Ver caso</span><span data-l="en">View case</span></summary>
-            <dl class="case-fields">
-              <dt><span data-l="es">Problema</span><span data-l="en">Problem</span></dt>
-              <dd><span data-l="es">No vender ofertas agotadas o vencidas, y que el cliente tenga su cupón a mano.</span><span data-l="en">Do not sell sold-out or expired offers, and give customers their coupon at hand.</span></dd>
-              <dt><span data-l="es">Mi papel</span><span data-l="en">My role</span></dt>
-              <dd><span data-l="es">Proyecto de equipo, 33 de 54 commits.</span><span data-l="en">Team project, 33 of 54 commits.</span></dd>
-              <dt><span data-l="es">Decisión</span><span data-l="en">Decision</span></dt>
-              <dd><span data-l="es">Validar stock y expiración, manejar un estado global y guardar metadatos en el registro.</span><span data-l="en">Validate stock and expiration, manage global state and store metadata at sign-up.</span></dd>
-              <dt><span data-l="es">Resultado</span><span data-l="en">Result</span></dt>
-              <dd><span data-l="es">Compra con reglas claras y descarga del cupón en PDF.</span><span data-l="en">A purchase flow with clear rules and coupon download as PDF.</span></dd>
-            </dl>
-            <a href="https://github.com/AlejandroDuron/Ecommerce-coupons" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a>
-          </details>
-        </div>
-      </article>
-
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ 5. HABILIDADES ============ -->
-<section id="habilidades">
+<!-- ============ Trayectoria ============
+     Cada etapa: año grande, punto y logo con su descripción.
+     Logos: guárdalos en assets/trayectoria/ con el nombre de cada <img>.
+     Si falta un logo, se muestra el nombre de la organización en grande. -->
+<section id="trayectoria" data-es="Trayectoria" data-en="Experience">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow"><span data-l="es">Habilidades</span><span data-l="en">Skills</span></p>
-      <h2><span data-l="es">Herramientas que he usado</span><span data-l="en">Tools I have used</span></h2>
+    <h2 class="sec-title" data-reveal><span data-l="es">Trayectoria</span><span data-l="en">Experience</span></h2>
+    <div class="timeline">
+      <svg class="tl-path" aria-hidden="true"><path></path></svg>
+
+      <article class="tl-item">
+        <span class="tl-year">2022</span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/kriete.png" alt="" loading="lazy"><span class="tl-org">Fundación Gloria de Kriete</span>
+          <p class="tl-role"><span data-l="es">2022 – 2023 · Becaria, programa Oportunidades</span><span data-l="en">2022 – 2023 · Scholar, Oportunidades program</span></p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <span class="tl-year">2024</span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/esen.png" alt="" loading="lazy"><span class="tl-org">ESEN</span>
+          <p class="tl-role"><span data-l="es">2024 – hoy · Ingeniería de Software y Negocios Digitales, becada</span><span data-l="en">2024 – today · Software Engineering &amp; Digital Business, scholarship</span></p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <span class="tl-year">AIESEC</span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/aiesec.png" alt="" loading="lazy"><span class="tl-org">AIESEC Canadá</span>
+          <p class="tl-role"><span data-l="es">Manager de Talento Humano · entidad nacional, remoto</span><span data-l="en">Human Talent Manager · national entity, remote</span></p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <span class="tl-year"><span data-l="es">Hoy</span><span data-l="en">Today</span></span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/aiesec.png" alt="" loading="lazy"><span class="tl-org">AIESEC en ESEN</span>
+          <p class="tl-role"><span data-l="es">Presidenta local · oriente, centro y occidente de El Salvador</span><span data-l="en">Local Committee President · eastern, central and western El Salvador</span></p>
+        </div>
+      </article>
     </div>
-    <div class="skills">
-      <div data-reveal>
-        <h3 class="label">QA</h3>
-        <ul class="chips"><li><span data-l="es">Ejecución y reporte de pruebas</span><span data-l="en">Test execution and reporting</span></li><li>Supertest</li><li><span data-l="es">Metodologías ágiles</span><span data-l="en">Agile methodologies</span></li></ul>
-      </div>
-      <div data-reveal>
-        <h3 class="label">Cloud</h3>
-        <ul class="chips"><li>AWS</li><li>Terraform</li><li>Kubernetes</li><li>Firebase</li></ul>
-      </div>
-      <div data-reveal>
-        <h3 class="label"><span data-l="es">Seguridad</span><span data-l="en">Security</span></h3>
-        <ul class="chips"><li><span data-l="es">Roles y permisos</span><span data-l="en">Roles and permissions</span></li><li>Laravel Policies</li><li>CodeQL</li><li>Gitleaks</li><li>Trivy</li><li>SBOM</li><li>Sonar</li></ul>
-      </div>
-      <div data-reveal>
-        <h3 class="label"><span data-l="es">Base de desarrollo</span><span data-l="en">Development base</span></h3>
-        <ul class="chips"><li>Python</li><li>pandas · numpy</li><li>matplotlib · seaborn</li><li>Java</li><li>C#</li><li>C++</li><li>SQL Server</li><li>PHP · Laravel</li><li>NestJS</li><li>HTML · CSS · JavaScript</li><li>Dart · Flutter</li><li>PWAs</li><li>Figma</li></ul>
-      </div>
+  </div>
+</section>
+
+<!-- ============ Contacto por WhatsApp ============
+     Cambia data-phone por tu número con código de país, sin + ni espacios (ej. 50370000000). -->
+<section id="contacto" data-es="Contacto" data-en="Contact" class="band">
+  <div class="wrap contact-grid">
+    <div data-reveal>
+      <h2 class="sec-title"><span data-l="es">Hablemos</span><span data-l="en">Let's talk</span></h2>
+      <p class="contact-copy"><span data-l="es">¿Tu equipo necesita calidad y seguridad con visión de negocio? Déjame tus datos y se abrirá WhatsApp con un mensaje listo para enviarme.</span><span data-l="en">Does your team need quality and security with a business mindset? Leave your details and WhatsApp will open with a message ready to send me.</span></p>
     </div>
+    <form class="wa-form" id="wa-form" data-phone="503XXXXXXXX" novalidate data-reveal>
+      <label for="wa-name"><span data-l="es">Tu nombre</span><span data-l="en">Your name</span></label>
+      <input id="wa-name" name="name" type="text" autocomplete="name" required>
+      <label for="wa-company"><span data-l="es">Empresa</span><span data-l="en">Company</span></label>
+      <input id="wa-company" name="company" type="text" autocomplete="organization" required>
+      <label for="wa-role"><span data-l="es">Puesto de interés (opcional)</span><span data-l="en">Position of interest (optional)</span></label>
+      <select id="wa-role" name="role">
+        <option value="">—</option>
+        <option value="QA">QA</option>
+        <option value="Cloud">Cloud</option>
+        <option value="SOC">SOC</option>
+      </select>
+      <p class="preview" id="wa-preview" aria-live="polite"></p>
+      <p class="form-error" id="wa-error" hidden><span data-l="es">Escribe tu nombre y tu empresa.</span><span data-l="en">Enter your name and company.</span></p>
+      <button class="btn btn-wa" type="submit">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48a9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.87 9.87 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg>
+        <span data-l="es">Enviar por WhatsApp</span><span data-l="en">Send via WhatsApp</span>
+      </button>
+    </form>
   </div>
 </section>
 
 </main>
 
-<!-- ============ 6. CONTACTO ============ -->
-<footer id="contacto" class="contact">
-  <div class="wrap" data-reveal>
-    <p class="eyebrow"><span data-l="es">Contacto</span><span data-l="en">Contact</span></p>
-    <h2><span data-l="es">¿Tu equipo necesita calidad y seguridad con visión de negocio?</span><span data-l="en">Does your team need quality and security with a business mindset?</span></h2>
-    <p><span data-l="es">Busco una pasantía en QA, Cloud o SOC, de preferencia híbrida o remota.</span><span data-l="en">I am looking for an internship in QA, Cloud or SOC, ideally hybrid or remote.</span></p>
-    <div class="cta">
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/kathleenargueta" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/KathleenArgueta" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <p class="copy">© 2026 Kathleen Argueta</p>
+<!-- Botón para avanzar a la siguiente sección -->
+<button type="button" class="next-btn" id="next-btn">
+  <span class="next-label"><span data-l="es">Siguiente</span><span data-l="en">Next</span></span>
+  <span class="next-name" id="next-name">Skills</span>
+</button>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <span>© 2026 Kathleen Argueta</span>
+    <span>
+      <a href="https://www.linkedin.com/in/kathleenargueta" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/KathleenArgueta" target="_blank" rel="noopener">GitHub</a>
+    </span>
   </div>
 </footer>
 
