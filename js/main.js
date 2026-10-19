@@ -101,11 +101,16 @@
   });
 })();
 
-// ---------- Fotos de AIESEC que aún no existen: se ocultan ----------
+// ---------- Fotos de AIESEC que aún no existen ----------
+// En la galería se ocultan; en los bloques grandes queda solo el texto.
 (function () {
-  document.querySelectorAll(".gallery img").forEach(function (img) {
-    function hide() { img.closest("figure").hidden = true; }
-    if (img.complete && img.naturalWidth === 0) hide();
-    img.addEventListener("error", hide);
+  document.querySelectorAll(".gallery img, .feature-img img").forEach(function (img) {
+    function missing() {
+      var feature = img.closest(".feature");
+      if (feature) feature.classList.add("no-img");
+      else img.closest("figure").hidden = true;
+    }
+    if (img.complete && img.naturalWidth === 0) missing();
+    img.addEventListener("error", missing);
   });
 })();

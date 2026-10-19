@@ -23,6 +23,6 @@ assets/aiesec/      fotos de los proyectos de AIESEC
 
 - **Textos:** cada texto existe dos veces, `<span data-l="es">` y `<span data-l="en">`. Cambia los dos.
 - **Colores:** edita las variables de `:root` en `css/styles.css`.
-- **Fotos de AIESEC:** guarda cada foto en `assets/aiesec/` con el nombre que aparece en su `<img>` (por ejemplo `tortugas.jpg`, horizontal 4:3). Las que falten no se muestran.
+- **Fotos de AIESEC:** guarda cada foto en `assets/aiesec/` con el nombre que aparece en su `<img>` (por ejemplo `tortugas.jpg`, horizontal 4:3). Si falta una, la galería la oculta y los bloques grandes (`talento-humano.jpg`, `voluntarios.jpg`, `comite.jpg`) se muestran solo con texto.
 - **Animación al hacer scroll:** agrega `data-reveal` a cualquier elemento.
 - **Filtro de proyectos:** cada `<details class="project">` tiene `data-area` (`qa`, `cloud` o `soc`; `all` solo aparece en "Todos").
