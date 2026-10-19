@@ -55,19 +55,6 @@
   items.forEach(function (el) { observer.observe(el); });
 })();
 
-// ---------- Barra de progreso de lectura ----------
-(function () {
-  var bar = document.querySelector(".progress");
-  if (!bar) return;
-  function update() {
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.setProperty("--progress", max > 0 ? window.scrollY / max : 0);
-  }
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-  update();
-})();
-
 // ---------- Sección activa en el menú ----------
 (function () {
   var links = document.querySelectorAll(".nav a");
@@ -114,11 +101,11 @@
   });
 })();
 
-// ---------- Fotos de proyectos que aún no existen ----------
+// ---------- Fotos de AIESEC que aún no existen: se ocultan ----------
 (function () {
-  document.querySelectorAll(".shot img").forEach(function (img) {
-    function empty() { img.closest(".shot").classList.add("is-empty"); }
-    if (img.complete && img.naturalWidth === 0) empty();
-    img.addEventListener("error", empty);
+  document.querySelectorAll(".gallery img").forEach(function (img) {
+    function hide() { img.closest("figure").hidden = true; }
+    if (img.complete && img.naturalWidth === 0) hide();
+    img.addEventListener("error", hide);
   });
 })();
