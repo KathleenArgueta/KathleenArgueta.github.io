@@ -26,7 +26,7 @@ assets/skills/      logos de tecnologías
 
 - **Textos:** cada texto existe dos veces, `<span data-l="es">` y `<span data-l="en">`. Cambia los dos.
 - **Colores:** edita las variables al inicio de `css/styles.css` (tema oscuro y tema claro).
-- **WhatsApp:** en `index.html`, cambia `data-phone="503XXXXXXXX"` del formulario por tu número con código de país, sin `+` ni espacios.
+- **WhatsApp:** en `index.html`, el número está en `data-phone` del formulario: código de país sin `+` ni espacios.
 - **Fotos de AIESEC:** guárdalas en `assets/aiesec/` como `talento-humano.jpg`, `voluntarios.jpg`, `comite.jpg` e `iniciativas.jpg` (horizontales, 16:10). Mientras falte una, la tarjeta muestra su cifra en grande.
 - **Capturas de proyectos:** guárdalas en `assets/proyectos/` como `legacy-delivery.png`, `cloudshop.png`, `devsecops.png` y `control-acceso.png` (16:10). Mientras falte una, la tarjeta muestra su stack.
 - **Logos de la trayectoria:** guárdalos en `assets/trayectoria/` como `kriete.png`, `esen.png` y `aiesec.png`. Si falta uno, se ve el nombre de la organización.
