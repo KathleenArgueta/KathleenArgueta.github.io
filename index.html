@@ -45,7 +45,7 @@
 <main>
 
 <!-- ============ Inicio ============ -->
-<section id="inicio" class="hero">
+<section id="inicio" data-es="Inicio" data-en="Home" class="hero">
   <div class="wrap hero-grid">
     <div data-reveal>
       <p class="hello"><span data-l="es">Hola, soy</span><span data-l="en">Hi, I'm</span></p>
@@ -75,7 +75,7 @@
 </section>
 
 <!-- ============ Skills ============ -->
-<section id="skills" class="band">
+<section id="skills" data-es="Skills" data-en="Skills" class="band">
   <div class="wrap">
     <h2 class="sec-title" data-reveal><span data-l="es">Lo que sé hacer</span><span data-l="en">I'm good at this</span></h2>
     <ul class="logos" data-reveal>
@@ -102,7 +102,7 @@
 <!-- ============ Liderazgo (AIESEC) ============
      Fotos: guárdalas en assets/aiesec/ con el nombre de cada <img>.
      Mientras falte una foto, la tarjeta muestra su cifra en grande. -->
-<section id="liderazgo">
+<section id="liderazgo" data-es="Liderazgo" data-en="Leadership">
   <div class="wrap">
     <h2 class="sec-title" data-reveal><span data-l="es">Lo que he liderado</span><span data-l="en">What I've led</span></h2>
 
@@ -147,7 +147,7 @@
 </section>
 
 <!-- ============ Proyectos técnicos ============ -->
-<section id="proyectos" class="band">
+<section id="proyectos" data-es="Proyectos" data-en="Projects" class="band">
   <div class="wrap">
     <div class="sec-row" data-reveal>
       <h2 class="sec-title"><span data-l="es">Proyectos técnicos</span><span data-l="en">Things I've built</span></h2>
@@ -184,38 +184,57 @@
 </section>
 
 <!-- ============ Trayectoria ============
-     Completa los años que faltan en <span class="t-date">. -->
-<section id="trayectoria">
+     Cada etapa: año grande, punto y logo con su descripción.
+     Logos: guárdalos en assets/trayectoria/ con el nombre de cada <img>.
+     Si falta un logo, se muestra el nombre de la organización en grande. -->
+<section id="trayectoria" data-es="Trayectoria" data-en="Experience">
   <div class="wrap">
     <h2 class="sec-title" data-reveal><span data-l="es">Trayectoria</span><span data-l="en">Experience</span></h2>
-    <ol class="timeline">
-      <li data-reveal>
-        <span class="t-date">2022 – 2023</span>
-        <h3><span data-l="es">Becaria · Fundación Gloria de Kriete</span><span data-l="en">Scholar · Gloria de Kriete Foundation</span></h3>
-        <p><span data-l="es">Programa Oportunidades. Salí de La Unión para aprender a gestionar los proyectos sociales que me inspiraron.</span><span data-l="en">Oportunidades program. I left La Unión to learn how to run the social projects that inspired me.</span></p>
-      </li>
-      <li data-reveal>
-        <span class="t-date">2024 – <span data-l="es">hoy</span><span data-l="en">today</span></span>
-        <h3><span data-l="es">Ingeniería de Software y Negocios Digitales · ESEN</span><span data-l="en">Software Engineering &amp; Digital Business · ESEN</span></h3>
-        <p><span data-l="es">Becada, en tercer año.</span><span data-l="en">Scholarship student, third year.</span></p>
-      </li>
-      <li data-reveal>
-        <span class="t-date">AIESEC</span>
-        <h3><span data-l="es">Manager de Talento Humano · Canadá</span><span data-l="en">Human Talent Manager · Canada</span></h3>
-        <p><span data-l="es">Entidad nacional, de forma remota.</span><span data-l="en">National entity, remote.</span></p>
-      </li>
-      <li data-reveal>
-        <span class="t-date"><span data-l="es">Hoy</span><span data-l="en">Today</span></span>
-        <h3><span data-l="es">Presidenta local · AIESEC en ESEN</span><span data-l="en">Local Committee President · AIESEC at ESEN</span></h3>
-        <p><span data-l="es">Liderazgo e intercambios en el oriente, centro y occidente de El Salvador.</span><span data-l="en">Leadership and exchanges across eastern, central and western El Salvador.</span></p>
-      </li>
-    </ol>
+    <div class="timeline">
+      <svg class="tl-path" aria-hidden="true"><path></path></svg>
+
+      <article class="tl-item">
+        <span class="tl-year">2022</span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/kriete.png" alt="" loading="lazy"><span class="tl-org">Fundación Gloria de Kriete</span>
+          <p class="tl-role"><span data-l="es">2022 – 2023 · Becaria, programa Oportunidades</span><span data-l="en">2022 – 2023 · Scholar, Oportunidades program</span></p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <span class="tl-year">2024</span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/esen.png" alt="" loading="lazy"><span class="tl-org">ESEN</span>
+          <p class="tl-role"><span data-l="es">2024 – hoy · Ingeniería de Software y Negocios Digitales, becada</span><span data-l="en">2024 – today · Software Engineering &amp; Digital Business, scholarship</span></p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <span class="tl-year">AIESEC</span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/aiesec.png" alt="" loading="lazy"><span class="tl-org">AIESEC Canadá</span>
+          <p class="tl-role"><span data-l="es">Manager de Talento Humano · entidad nacional, remoto</span><span data-l="en">Human Talent Manager · national entity, remote</span></p>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <span class="tl-year"><span data-l="es">Hoy</span><span data-l="en">Today</span></span>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <img class="tl-logo" src="assets/trayectoria/aiesec.png" alt="" loading="lazy"><span class="tl-org">AIESEC en ESEN</span>
+          <p class="tl-role"><span data-l="es">Presidenta local · oriente, centro y occidente de El Salvador</span><span data-l="en">Local Committee President · eastern, central and western El Salvador</span></p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
 <!-- ============ Contacto por WhatsApp ============
      Cambia data-phone por tu número con código de país, sin + ni espacios (ej. 50370000000). -->
-<section id="contacto" class="band">
+<section id="contacto" data-es="Contacto" data-en="Contact" class="band">
   <div class="wrap contact-grid">
     <div data-reveal>
       <h2 class="sec-title"><span data-l="es">Hablemos</span><span data-l="en">Let's talk</span></h2>
@@ -244,6 +263,12 @@
 </section>
 
 </main>
+
+<!-- Botón para avanzar a la siguiente sección -->
+<button type="button" class="next-btn" id="next-btn">
+  <span class="next-label"><span data-l="es">Siguiente</span><span data-l="en">Next</span></span>
+  <span class="next-name" id="next-name">Skills</span>
+</button>
 
 <footer class="footer">
   <div class="wrap footer-row">
