@@ -8,189 +8,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
-<style>
-/* Layout: a single reading column laid on a faint square-meter grid ("su metro cuadrado"); case studies as 4-field records. */
-:root {
-  --bg: #f5f7f6;
-  --surface: #ffffff;
-  --ink: #142a2e;
-  --muted: #4d6266;
-  --line: #d5dfdc;
-  --accent: #17695a;
-  --accent-soft: #e2efeb;
-  --sun: #f2c14e;
-  --grid: rgba(23, 105, 90, .07);
-  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --s-1: .8125rem; --s0: 1rem; --s1: 1.1875rem; --s2: 1.5rem; --s3: 2.125rem; --s4: clamp(2.5rem, 7vw, 4.25rem);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1a1c; --surface: #152427; --ink: #e6efed; --muted: #9fb3b0; --line: #284045;
-    --accent: #5cc4ad; --accent-soft: #19332f; --sun: #f2c14e; --grid: rgba(92, 196, 173, .06);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0f1a1c; --surface: #152427; --ink: #e6efed; --muted: #9fb3b0; --line: #284045;
-  --accent: #5cc4ad; --accent-soft: #19332f; --sun: #f2c14e; --grid: rgba(92, 196, 173, .06);
-  color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font: 400 var(--s0)/1.65 var(--f-body);
-  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-
-/* language switching */
-html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"] { display: none !important; }
-
-a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-.wrap {
-  max-width: 68rem; margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-
-/* header */
-.top {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
-}
-.top .wrap { display: flex; align-items: center; gap: 1rem; padding-block: .7rem; }
-.brand { font: 700 var(--s0)/1 var(--f-display); color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: .55rem; }
-.brand .m2 { font: 600 .75rem/1 var(--f-mono); color: var(--bg); background: var(--accent); padding: .3rem .35rem; border-radius: 3px; }
-.top nav { display: flex; gap: 1.1rem; margin-left: auto; flex-wrap: wrap; }
-.top nav a { color: var(--muted); text-decoration: none; font-size: var(--s-1); font-weight: 600; }
-.top nav a:hover { color: var(--accent); }
-.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; }
-.lang button {
-  font: 600 .75rem/1 var(--f-mono); letter-spacing: .06em; padding: .45rem .7rem;
-  background: transparent; color: var(--muted); border: 0; cursor: pointer;
-}
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-@media (max-width: 760px) { .top nav { display: none; } .lang { margin-left: auto; } }
-
-/* hero */
-.hero { padding-block: clamp(3rem, 8vw, 6rem) 3rem; }
-.eyebrow { font: 600 var(--s-1)/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 1rem; }
-.hero h1 { font: 800 var(--s4)/1.02 var(--f-display); letter-spacing: -.02em; margin: 0 0 1.25rem; text-wrap: balance; }
-.hero h1 .hl { background: linear-gradient(transparent 62%, color-mix(in srgb, var(--sun) 70%, transparent) 62%); }
-.hero .lede { font-size: var(--s1); max-width: 40rem; color: var(--muted); margin: 0 0 1.75rem; }
-.roles { display: flex; gap: .5rem; flex-wrap: wrap; margin: 0 0 2.5rem; padding: 0; list-style: none; }
-.roles li { font: 600 var(--s-1)/1 var(--f-mono); padding: .55rem .8rem; border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; background: var(--surface); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 3rem; align-items: center; }
-.portrait { margin: 0 0 2.5rem; position: relative; }
-.portrait::before { content: ""; position: absolute; inset: 1.1rem -1.1rem -1.1rem 1.1rem; background: var(--sun); border-radius: 6px; }
-.portrait img { position: relative; display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); background: #fff; }
-@media (max-width: 760px) { .hero-grid { grid-template-columns: 1fr; gap: 0; } .portrait { order: -1; width: min(13rem, 70%); margin-bottom: 2.5rem; } }
-.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-.fact { background: var(--surface); padding: 1.25rem 1.25rem 1.1rem; min-width: 0; }
-.fact b { display: block; font: 800 var(--s3)/1 var(--f-display); font-variant-numeric: tabular-nums; margin-bottom: .45rem; }
-.fact span { font-size: var(--s-1); color: var(--muted); }
-
-/* sections */
-section { padding-block: 3.5rem; }
-.sec-head { display: grid; gap: .4rem; margin-bottom: 2rem; }
-.sec-head h2 { font: 700 var(--s3)/1.1 var(--f-display); margin: 0; letter-spacing: -.01em; text-wrap: balance; }
-.sec-head p { margin: 0; color: var(--muted); max-width: 42rem; }
-.prose { max-width: 42rem; }
-.prose p { margin: 0 0 1.1rem; }
-
-.about { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2.5rem; align-items: start; }
-.traits { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; }
-.traits h3 { font: 600 var(--s-1)/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 .9rem; }
-.traits ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
-.traits li strong { display: block; font: 700 var(--s1)/1.2 var(--f-display); }
-.traits li span { font-size: var(--s-1); color: var(--muted); }
-@media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
-
-/* thinking */
-.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
-.principle { border-top: 3px solid var(--accent); padding-top: 1rem; min-width: 0; }
-.principle h3 { font: 700 var(--s1)/1.25 var(--f-display); margin: 0 0 .5rem; }
-.principle p { margin: 0 0 .6rem; color: var(--muted); }
-.principle p:last-child { margin-bottom: 0; }
-
-/* featured case */
-.feature { background: var(--ink); color: var(--bg); border-radius: 8px; padding: clamp(1.5rem, 4vw, 2.5rem); display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem; margin-bottom: 2rem; }
-.feature .eyebrow { color: var(--sun); }
-.feature h3 { font: 700 var(--s2)/1.2 var(--f-display); margin: 0 0 1rem; text-wrap: balance; }
-.feature dl { margin: 0; display: grid; gap: .85rem; }
-.feature dt { font: 600 .75rem/1.2 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: color-mix(in srgb, var(--bg) 65%, var(--ink)); }
-.feature dd { margin: .2rem 0 0; }
-.meter { display: grid; gap: 1.25rem; align-content: center; }
-.meter-row { display: grid; gap: .4rem; }
-.meter-row .lbl { font: 600 .75rem/1.2 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: color-mix(in srgb, var(--bg) 65%, var(--ink)); }
-.people { display: flex; flex-wrap: wrap; gap: 4px; }
-.people i { width: 14px; height: 14px; border-radius: 2px; background: color-mix(in srgb, var(--bg) 25%, var(--ink)); }
-.people i.on { background: var(--sun); }
-.big { font: 800 var(--s3)/1 var(--f-display); color: var(--sun); font-variant-numeric: tabular-nums; }
-@media (max-width: 760px) { .feature { grid-template-columns: 1fr; } }
-
-/* case grid */
-.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-@media (max-width: 760px) { .cases { grid-template-columns: 1fr; } }
-.case { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem; display: flex; flex-direction: column; gap: .9rem; min-width: 0; }
-.case-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
-.area { font: 600 .75rem/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: .4rem .55rem; border-radius: 3px; }
-.stack { font: 400 .75rem/1.3 var(--f-mono); color: var(--muted); }
-.case h3 { font: 700 var(--s1)/1.25 var(--f-display); margin: 0; }
-.case dl { margin: 0; display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .55rem .9rem; font-size: .9375rem; }
-.case dt { font: 600 .75rem/1.6 var(--f-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-.case dd { margin: 0; }
-@media (max-width: 420px) { .case dl { grid-template-columns: 1fr; gap: .15rem; } .case dd { margin-bottom: .55rem; } }
-.case .links { margin-top: auto; padding-top: .4rem; font-size: var(--s-1); font-weight: 600; }
-.case.pending { background: transparent; border: 2px dashed var(--line); }
-.case.pending h3 { color: var(--muted); }
-
-/* security thread */
-.thread { margin-top: 2rem; padding: 1.4rem; border-left: 3px solid var(--sun); background: var(--surface); border-radius: 0 6px 6px 0; }
-.thread h3 { font: 700 var(--s1)/1.25 var(--f-display); margin: 0 0 .5rem; }
-.thread p { margin: 0 0 .75rem; max-width: 46rem; }
-.thread ul { margin: 0; padding-left: 1.1rem; }
-
-/* leadership timeline */
-.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-width: 46rem; }
-.timeline li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; padding-block: 1.1rem; border-top: 1px solid var(--line); }
-.timeline .when { font: 600 var(--s-1)/1.5 var(--f-mono); color: var(--accent); }
-.timeline h3 { font: 700 var(--s1)/1.3 var(--f-display); margin: 0 0 .3rem; }
-.timeline p { margin: 0; color: var(--muted); }
-@media (max-width: 520px) { .timeline li { grid-template-columns: 1fr; gap: .3rem; } }
-
-/* skills */
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2rem; }
-.skills h3 { font: 600 var(--s-1)/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 .6rem; }
-.chips { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
-.chips li { font-size: var(--s-1); padding: .3rem .6rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
-
-/* contact */
-.contact { background: var(--accent); color: var(--bg); }
-.contact .wrap { padding-block: 3.5rem; display: grid; gap: 1rem; }
-.contact h2 { font: 800 var(--s3)/1.1 var(--f-display); margin: 0; text-wrap: balance; max-width: 36rem; }
-.contact p { margin: 0; max-width: 40rem; }
-.contact a { color: var(--bg); font-weight: 600; }
-.contact .row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: .5rem; }
-footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted); }
-</style>
-
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add("js");</script>
+<script src="js/main.js" defer></script>
 </head>
 <body>
-
 <header class="top">
+  <div class="progress" aria-hidden="true"></div>
   <div class="wrap">
     <a class="brand" href="#inicio"><span class="m2">m²</span> Kathleen Argueta</a>
-    <nav aria-label="Secciones">
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">
+      <span data-l="es">Menú</span><span data-l="en">Menu</span>
+    </button>
+    <nav id="site-nav" aria-label="Secciones">
       <a href="#sobre-mi"><span data-l="es">Sobre mí</span><span data-l="en">About</span></a>
       <a href="#como-pienso"><span data-l="es">Cómo pienso</span><span data-l="en">How I think</span></a>
       <a href="#casos"><span data-l="es">Casos</span><span data-l="en">Case studies</span></a>
@@ -208,7 +38,7 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
 <main id="inicio">
   <div class="wrap hero">
     <div class="hero-grid">
-    <div class="hero-text">
+    <div class="hero-text" data-reveal>
     <p class="eyebrow">
       <span data-l="es">Ingeniería de Software y Negocios Digitales · ESEN · 3.er año</span>
       <span data-l="en">Software Engineering &amp; Digital Business · ESEN · 3rd year</span>
@@ -227,21 +57,21 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
       <li>SOC Intern</li>
     </ul>
     </div>
-    <figure class="portrait">
+    <figure class="portrait" data-reveal>
       <img src="assets/kathleen.jpg" width="608" height="712" alt="Kathleen Argueta">
     </figure>
     </div>
     <div class="facts">
-      <div class="fact"><b>15 → 5</b>
+      <div class="fact" data-reveal><b>15 → 5</b>
         <span data-l="es">personas dedicadas a un proceso manual, tras el sistema interno que lideré (en piloto)</span>
         <span data-l="en">people dedicated to a manual process, after the internal system I led (in pilot)</span></div>
-      <div class="fact"><b>+200%</b>
+      <div class="fact" data-reveal><b>+200%</b>
         <span data-l="es">ventas del producto foco en seis meses, con el equipo liberado</span>
         <span data-l="en">sales of the flagship product in six months, with the freed-up team</span></div>
-      <div class="fact"><b>10+</b>
+      <div class="fact" data-reveal><b>10+</b>
         <span data-l="es">iniciativas ambientales y sociales como Presidenta local de AIESEC</span>
         <span data-l="en">environmental and social initiatives as AIESEC Local Committee President</span></div>
-      <div class="fact"><b>4</b>
+      <div class="fact" data-reveal><b>4</b>
         <span data-l="es">países y 3 congresos internacionales</span>
         <span data-l="en">countries and 3 international conferences</span></div>
     </div>
@@ -250,22 +80,22 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
   <section id="sobre-mi">
     <div class="wrap about">
       <div>
-        <div class="sec-head">
+        <div class="sec-head" data-reveal>
           <p class="eyebrow"><span data-l="es">Sobre mí</span><span data-l="en">About me</span></p>
           <h2><span data-l="es">Liderar soluciones en mi metro cuadrado</span><span data-l="en">Leading solutions in my own corner of the world</span></h2>
         </div>
-        <div class="prose" data-l="es">
+        <div class="prose" data-reveal data-l="es">
           <p>Kathleen Argueta es estudiante de tercer año de Ingeniería de Software y Negocios Digitales en la Escuela Superior de Economía y Negocios (ESEN) y está comprometida con liderar soluciones en su metro cuadrado. A los 17 años dejó La Unión gracias a la beca de la Fundación Gloria de Kriete; actualmente, como Presidenta local de AIESEC, impulsa oportunidades de desarrollo de liderazgo e intercambios internacionales en el oriente de El Salvador.</p>
           <p>Su enfoque de trabajo consiste en estandarizar procesos y fundamentar las decisiones en datos, de modo que las personas que los ejecutan los comprendan y puedan responder ante imprevistos. Bajo este enfoque, lideró el desarrollo de un sistema interno, actualmente en fase piloto, que redujo de 15 a 5 el número de personas dedicadas a un proceso manual y permitió al equipo reorientar su esfuerzo hasta incrementar en 200% las ventas de su producto foco en seis meses.</p>
           <p>Busca su primera pasantía en QA, Cloud o SOC, con el propósito de integrar la calidad y la seguridad de los sistemas con el talento humano de los equipos.</p>
         </div>
-        <div class="prose" data-l="en">
+        <div class="prose" data-reveal data-l="en">
           <p>Kathleen Argueta is a third-year Software Engineering and Digital Business student at the Escuela Superior de Economía y Negocios (ESEN), committed to leading solutions in her own corner of the world. At 17, she left La Unión thanks to a scholarship from the Gloria de Kriete Foundation. Today, as Local Committee President of AIESEC, she brings leadership development and international exchange opportunities to eastern El Salvador.</p>
           <p>Her approach is to standardize processes and ground decisions in data, so the people who run those processes understand them and can respond to the unexpected. With this approach, she led the development of an internal system, now in its pilot phase, that reduced the number of people dedicated to a manual process from 15 to 5 and allowed the team to redirect its efforts, increasing sales of its flagship product by 200% in six months.</p>
           <p>She is seeking her first internship in QA, Cloud, or SOC, with the goal of bringing together system quality and security with the human talent of teams.</p>
         </div>
       </div>
-      <aside class="traits">
+      <aside class="traits" data-reveal>
         <h3><span data-l="es">Cómo me describe mi equipo</span><span data-l="en">How my team describes me</span></h3>
         <ul>
           <li><strong><span data-l="es">Honestidad</span><span data-l="en">Honesty</span></strong></li>
@@ -279,22 +109,22 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
 
   <section id="como-pienso">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head" data-reveal>
         <p class="eyebrow"><span data-l="es">Cómo pienso</span><span data-l="en">How I think</span></p>
         <h2><span data-l="es">La calidad empieza por quien ejecuta el proceso</span><span data-l="en">Quality starts with the people who run the process</span></h2>
       </div>
       <div class="principles">
-        <div class="principle">
+        <div class="principle" data-reveal>
           <h3><span data-l="es">Estandarizar para dar autonomía</span><span data-l="en">Standardize to give autonomy</span></h3>
           <p data-l="es">Un proceso bien definido no es para controlar a las personas: es para que lo comprendan y puedan responder ante imprevistos sin depender de alguien más.</p>
           <p data-l="en">A well-defined process is not there to control people. It is there so they understand it and can respond to the unexpected without depending on someone else.</p>
         </div>
-        <div class="principle">
+        <div class="principle" data-reveal>
           <h3><span data-l="es">Decidir con datos</span><span data-l="en">Decide with data</span></h3>
           <p data-l="es">Fundamento las decisiones en datos. En el sistema interno, la cifra que importaba era cuántas personas ocupaba el proceso manual: pasó de 15 a 5, y ese tiempo liberado se tradujo en ventas.</p>
           <p data-l="en">I ground decisions in data. In the internal system, the number that mattered was how many people the manual process took: it went from 15 to 5, and the time freed up turned into sales.</p>
         </div>
-        <div class="principle">
+        <div class="principle" data-reveal>
           <h3><span data-l="es">Explicar por qué, no solo qué</span><span data-l="en">Explain why, not only what</span></h3>
           <p data-l="es">En el refactor de Legacy Delivery escribí bitácoras con el problema que vi, el patrón que apliqué y el que descarté, para que otra persona pueda seguir mi razonamiento.</p>
           <p data-l="en">In the Legacy Delivery refactor I kept logs of the problem I saw, the pattern I applied and the one I ruled out, so someone else can follow my reasoning.</p>
@@ -306,13 +136,13 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
 
   <section id="casos">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head" data-reveal>
         <p class="eyebrow"><span data-l="es">Casos de estudio</span><span data-l="en">Case studies</span></p>
         <h2><span data-l="es">Problema, mi papel, la decisión y el resultado</span><span data-l="en">The problem, my role, the decision and the result</span></h2>
         <p><span data-l="es">Casos de negocio primero; el código está enlazado para quien quiera revisarlo.</span><span data-l="en">Business cases first; the code is linked for anyone who wants to review it.</span></p>
       </div>
 
-      <article class="feature">
+      <article class="feature" data-reveal>
         <div>
           <p class="eyebrow"><span data-l="es">Caso destacado · Integración de sistemas</span><span data-l="en">Featured case · Systems integration</span></p>
           <h3><span data-l="es">Sistema interno de contacto por WhatsApp</span><span data-l="en">Internal WhatsApp contact system</span></h3>
@@ -344,7 +174,7 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
       </article>
 
       <div class="cases">
-        <article class="case">
+        <article class="case" data-reveal>
           <div class="case-top"><span class="area"><span data-l="es">Seguridad · Control de acceso</span><span data-l="en">Security · Access control</span></span><span class="stack">Laravel</span></div>
           <h3><span data-l="es">Sistema de Gestión de Flotas</span><span data-l="en">Fleet Management System</span></h3>
           <dl>
@@ -360,7 +190,7 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
           <p class="links"><a href="https://github.com/TheAlejo999/backend-proyecto-catedra" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a></p>
         </article>
 
-        <article class="case">
+        <article class="case" data-reveal>
           <div class="case-top"><span class="area"><span data-l="es">Negocio digital</span><span data-l="en">Digital business</span></span><span class="stack">React · Supabase</span></div>
           <h3>La Cuponera</h3>
           <dl>
@@ -376,7 +206,7 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
           <p class="links"><a href="https://github.com/AlejandroDuron/Ecommerce-coupons" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a></p>
         </article>
 
-        <article class="case">
+        <article class="case" data-reveal>
           <div class="case-top"><span class="area">Cloud</span><span class="stack">Terraform · AWS</span></div>
           <h3>CloudShop Enterprise</h3>
           <dl>
@@ -392,7 +222,7 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
           <p class="links"><a href="https://github.com/AlxMC2/CloudShop-Enterprise" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a></p>
         </article>
 
-        <article class="case">
+        <article class="case" data-reveal>
           <div class="case-top"><span class="area">SOC · DevSecOps</span><span class="stack">GitHub Actions · Terraform</span></div>
           <h3>DevSecOps Pipeline</h3>
           <dl>
@@ -408,14 +238,14 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
           <p class="links"><a href="https://github.com/Reina905/devsecops-pipeline-lab3" target="_blank" rel="noopener"><span data-l="es">Ver repositorio</span><span data-l="en">View repository</span></a></p>
         </article>
 
-        <article class="case pending" id="qa">
+        <article class="case pending" data-reveal id="qa">
           <div class="case-top"><span class="area">QA</span><span class="stack"><span data-l="es">Proyecto individual</span><span data-l="en">Individual project</span></span></div>
           <h3><span data-l="es">Proyecto de QA · en construcción</span><span data-l="en">QA project · in progress</span></h3>
-          <p style="margin:0;color:var(--muted)"><span data-l="es">Aquí irá mi propio proyecto de pruebas de software, con su plan de pruebas, ejecución y reporte.</span><span data-l="en">My own software testing project will go here, with its test plan, execution and report.</span></p>
+          <p><span data-l="es">Aquí irá mi propio proyecto de pruebas de software, con su plan de pruebas, ejecución y reporte.</span><span data-l="en">My own software testing project will go here, with its test plan, execution and report.</span></p>
         </article>
       </div>
 
-      <div class="thread">
+      <div class="thread" data-reveal>
         <h3><span data-l="es">Un hilo en mi trabajo: el control de acceso</span><span data-l="en">A thread in my work: access control</span></h3>
         <p><span data-l="es">En tres proyectos de equipo distintos me encargué de roles, permisos y policies. Decidir quién puede hacer qué es la base de la seguridad de un sistema, y es el trabajo que más me ha tocado.</span><span data-l="en">In three different team projects I owned roles, permissions and policies. Deciding who can do what is the foundation of a system's security, and it is the work I have taken on most often.</span></p>
         <ul>
@@ -429,31 +259,31 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
 
   <section id="liderazgo">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head" data-reveal>
         <p class="eyebrow"><span data-l="es">Liderazgo y comunidad</span><span data-l="en">Leadership and community</span></p>
         <h2><span data-l="es">De La Unión al oriente de El Salvador, y de vuelta</span><span data-l="en">From La Unión to eastern El Salvador, and back</span></h2>
         <p><span data-l="es">Mi familia y mi comunidad me esperan de vuelta con oportunidades. Esto es lo que he construido hasta ahora.</span><span data-l="en">My family and my community are waiting for me to come back with opportunities. This is what I have built so far.</span></p>
       </div>
       <ol class="timeline">
-        <li><span class="when">2022–2023</span><div>
+        <li data-reveal><span class="when">2022–2023</span><div>
           <h3><span data-l="es">Becaria de la Fundación Gloria de Kriete</span><span data-l="en">Gloria de Kriete Foundation scholar</span></h3>
           <p><span data-l="es">Programa Oportunidades. En bachillerato me enamoré de STEAM: software, diseño 3D e ingeniería espacial. Salí de La Unión a los 17 años y hoy estudio becada en la ESEN.</span><span data-l="en">Oportunidades program. In high school I fell in love with STEAM: software, 3D design and space engineering. I left La Unión at 17 and now study at ESEN on a scholarship.</span></p></div></li>
-        <li><span class="when"><span data-l="es">Voluntariado</span><span data-l="en">Volunteering</span></span><div>
+        <li data-reveal><span class="when"><span data-l="es">Voluntariado</span><span data-l="en">Volunteering</span></span><div>
           <h3><span data-l="es">Huertos escolares</span><span data-l="en">School gardens</span></h3>
           <p><span data-l="es">Voluntariado de huertos en un instituto, inspirado en el trabajo de agricultor de mi abuelo.</span><span data-l="en">A garden volunteering project at a high school, inspired by my grandfather's work as a farmer.</span></p></div></li>
-        <li><span class="when">AIESEC</span><div>
+        <li data-reveal><span class="when">AIESEC</span><div>
           <h3><span data-l="es">Presidenta local de AIESEC en ESEN</span><span data-l="en">AIESEC Local Committee President at ESEN</span></h3>
           <p><span data-l="es">Más de 10 iniciativas ambientales y sociales (limpieza de playas, reforestación, liberación de tortugas, Hospital Bloom, ferias de empleo), 3 congresos internacionales y 4 países.</span><span data-l="en">More than 10 environmental and social initiatives (beach clean-ups, reforestation, sea turtle releases, Hospital Bloom, job fairs), 3 international conferences and 4 countries.</span></p></div></li>
-        <li><span class="when"><span data-l="es">Remoto</span><span data-l="en">Remote</span></span><div>
+        <li data-reveal><span class="when"><span data-l="es">Remoto</span><span data-l="en">Remote</span></span><div>
           <h3><span data-l="es">Talento humano en Canadá</span><span data-l="en">Human talent in Canada</span></h3>
           <p><span data-l="es">Lideré de forma remota el área de talento humano.</span><span data-l="en">I led the human talent area remotely.</span></p></div></li>
-        <li><span class="when"><span data-l="es">Web</span><span data-l="en">Web</span></span><div>
+        <li data-reveal><span class="when"><span data-l="es">Web</span><span data-l="en">Web</span></span><div>
           <h3><span data-l="es">Sitio para voluntarios internacionales</span><span data-l="en">Website for international volunteers</span></h3>
           <p><span data-l="es">Un sitio para quienes quieren venir a El Salvador como voluntarios.</span><span data-l="en">A website for people who want to come to El Salvador as volunteers.</span></p></div></li>
-        <li><span class="when"><span data-l="es">Expansión</span><span data-l="en">Expansion</span></span><div>
+        <li data-reveal><span class="when"><span data-l="es">Expansión</span><span data-l="en">Expansion</span></span><div>
           <h3><span data-l="es">Expansión al oriente</span><span data-l="en">Expanding to the east</span></h3>
           <p><span data-l="es">En un semestre, 12 de 30 miembros vinieron del oriente. En enero abre un comité propio de 30 personas.</span><span data-l="en">In one semester, 12 of 30 members came from the eastern region. A dedicated 30-person committee opens in January.</span></p></div></li>
-        <li><span class="when"><span data-l="es">Próxima meta</span><span data-l="en">Next goal</span></span><div>
+        <li data-reveal><span class="when"><span data-l="es">Próxima meta</span><span data-l="en">Next goal</span></span><div>
           <h3><span data-l="es">Voluntarios del exterior en zonas de desarrollo</span><span data-l="en">International volunteers in development areas</span></h3>
           <p><span data-l="es">Recibir voluntarios del exterior para proyectos en zonas protegidas, de vida marina y de pobreza.</span><span data-l="en">Welcome volunteers from abroad for projects in protected areas, marine life and poverty.</span></p></div></li>
       </ol>
@@ -462,22 +292,22 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
 
   <section id="habilidades">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head" data-reveal>
         <p class="eyebrow"><span data-l="es">Habilidades</span><span data-l="en">Skills</span></p>
         <h2><span data-l="es">Herramientas que he usado</span><span data-l="en">Tools I have used</span></h2>
       </div>
       <div class="skills">
-        <div><h3><span data-l="es">Calidad (QA)</span><span data-l="en">Quality (QA)</span></h3>
+        <div data-reveal><h3><span data-l="es">Calidad (QA)</span><span data-l="en">Quality (QA)</span></h3>
           <ul class="chips"><li><span data-l="es">Ejecución y reporte de pruebas</span><span data-l="en">Test execution and reporting</span></li><li>Supertest</li><li><span data-l="es">Metodologías ágiles</span><span data-l="en">Agile methodologies</span></li></ul></div>
-        <div><h3><span data-l="es">Nube</span><span data-l="en">Cloud</span></h3>
+        <div data-reveal><h3><span data-l="es">Nube</span><span data-l="en">Cloud</span></h3>
           <ul class="chips"><li>AWS</li><li>Terraform</li><li>Kubernetes</li><li>Firebase</li></ul></div>
-        <div><h3><span data-l="es">Seguridad</span><span data-l="en">Security</span></h3>
+        <div data-reveal><h3><span data-l="es">Seguridad</span><span data-l="en">Security</span></h3>
           <ul class="chips"><li><span data-l="es">Roles y permisos</span><span data-l="en">Roles and permissions</span></li><li>Policies (Laravel)</li><li>CodeQL · Gitleaks · Trivy</li></ul></div>
-        <div><h3><span data-l="es">Desarrollo</span><span data-l="en">Development</span></h3>
+        <div data-reveal><h3><span data-l="es">Desarrollo</span><span data-l="en">Development</span></h3>
           <ul class="chips"><li>Java</li><li>C#</li><li>C++</li><li>PHP · Laravel</li><li>NestJS</li><li>HTML5 · CSS · JavaScript</li><li>Dart · Flutter</li><li>PWAs</li><li><span data-l="es">Escritorio con Python</span><span data-l="en">Python desktop apps</span></li></ul></div>
-        <div><h3><span data-l="es">Datos</span><span data-l="en">Data</span></h3>
+        <div data-reveal><h3><span data-l="es">Datos</span><span data-l="en">Data</span></h3>
           <ul class="chips"><li>Python</li><li>pandas · numpy</li><li>matplotlib · seaborn</li><li>SQL Server</li></ul></div>
-        <div><h3><span data-l="es">Diseño</span><span data-l="en">Design</span></h3>
+        <div data-reveal><h3><span data-l="es">Diseño</span><span data-l="en">Design</span></h3>
           <ul class="chips"><li>Figma</li></ul></div>
       </div>
     </div>
@@ -486,7 +316,7 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
 
 <section class="contact" id="contacto">
   <div class="wrap">
-    <p class="eyebrow" style="color:var(--bg)"><span data-l="es">Contacto</span><span data-l="en">Contact</span></p>
+    <p class="eyebrow"><span data-l="es">Contacto</span><span data-l="en">Contact</span></p>
     <h2><span data-l="es">¿Tu equipo necesita calidad y seguridad con visión de negocio?</span><span data-l="en">Does your team need quality and security with a business mindset?</span></h2>
     <p><span data-l="es">Busco una pasantía en QA, Cloud o SOC, de preferencia en modalidad híbrida o remota.</span><span data-l="en">I am looking for an internship in QA, Cloud or SOC, ideally hybrid or remote.</span></p>
     <div class="row">
@@ -495,25 +325,5 @@ footer .wrap { padding-block: 1.5rem; font-size: var(--s-1); color: var(--muted)
   </div>
 </section>
 <footer><div class="wrap">© 2026 Kathleen Argueta</div></footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  function setLang(l) {
-    root.lang = l;
-    document.querySelectorAll(".lang button").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.set === l));
-    });
-    try { localStorage.setItem("ka-lang", l); } catch (e) {}
-  }
-  var start = "es";
-  if (location.hash === "#en" || location.hash === "#es") start = location.hash.slice(1);
-  else { try { start = localStorage.getItem("ka-lang") || start; } catch (e) {} }
-  setLang(start);
-  document.querySelectorAll(".lang button").forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.dataset.set); });
-  });
-})();
-</script>
 </body>
 </html>
