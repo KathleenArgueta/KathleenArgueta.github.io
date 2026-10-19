@@ -12,6 +12,7 @@ css/styles.css      diseño; los colores y fuentes están en :root al inicio
 js/main.js          idioma, aparición al hacer scroll, menú, filtro de proyectos
 assets/             foto de perfil
 assets/aiesec/      fotos de los proyectos de AIESEC
+assets/skills/      logos de tecnologías
 ```
 
 ## Trabajar en VS Code
@@ -22,7 +23,9 @@ assets/aiesec/      fotos de los proyectos de AIESEC
 ## Cómo hacer cambios comunes
 
 - **Textos:** cada texto existe dos veces, `<span data-l="es">` y `<span data-l="en">`. Cambia los dos.
-- **Colores:** edita las variables de `:root` en `css/styles.css`.
-- **Fotos de AIESEC:** guarda cada foto en `assets/aiesec/` con el nombre que aparece en su `<img>` (por ejemplo `tortugas.jpg`, horizontal 4:3). Si falta una, la galería la oculta y los bloques grandes (`talento-humano.jpg`, `voluntarios.jpg`, `comite.jpg`) se muestran solo con texto.
+- **Colores:** edita las variables al inicio de `css/styles.css` (tema oscuro y tema claro).
+- **WhatsApp:** en `index.html`, cambia `data-phone="503XXXXXXXX"` del formulario por tu número con código de país, sin `+` ni espacios.
+- **Fotos de AIESEC:** guárdalas en `assets/aiesec/` como `talento-humano.jpg`, `voluntarios.jpg`, `comite.jpg` e `iniciativas.jpg` (horizontales, 16:10). Mientras falte una, la tarjeta muestra su cifra en grande.
+- **Skills:** los logos están en `assets/skills/` (íconos de Devicon, licencia MIT). Agrega un `<li>` con su imagen y nombre.
+- **Línea de tiempo:** cada etapa es un `<li>` dentro de `.timeline`.
 - **Animación al hacer scroll:** agrega `data-reveal` a cualquier elemento.
-- **Filtro de proyectos:** cada `<details class="project">` tiene `data-area` (`qa`, `cloud` o `soc`; `all` solo aparece en "Todos").
