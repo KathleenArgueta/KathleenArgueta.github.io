@@ -198,6 +198,7 @@ section { padding-block: clamp(4.5rem, 10vw, 7.5rem); }
 .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2rem); }
 @media (max-width: 760px) { .projects { grid-template-columns: 1fr; } }
 .project { display: block; text-decoration: none; }
+.project[hidden] { display: none; }
 .p-shot {
   margin: 0; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; position: relative;
   background: var(--card); border: 1px solid var(--line); transition: border-color .25s;
