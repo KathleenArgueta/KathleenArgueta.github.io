@@ -172,7 +172,9 @@ section { padding-block: clamp(4.5rem, 10vw, 7.5rem); }
 
 /* ---------- Liderazgo ---------- */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-@media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+/* Si queda una tarjeta sola en la última fila, va centrada */
+.cards > .card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - .75rem); }
+@media (max-width: 760px) { .cards { grid-template-columns: 1fr; } .cards > .card:last-child:nth-child(odd) { width: 100%; } }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
 .card-img { margin: 0; aspect-ratio: 16 / 10; max-width: 100%; position: relative; overflow: hidden; background: var(--band); }
 /* contain + sin zoom: la foto se ve completa, tal como se subió */
