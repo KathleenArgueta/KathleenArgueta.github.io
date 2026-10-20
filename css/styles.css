@@ -175,8 +175,8 @@ section { padding-block: clamp(4.5rem, 10vw, 7.5rem); }
 @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
 .card-img { margin: 0; aspect-ratio: 16 / 10; max-width: 100%; position: relative; overflow: hidden; background: var(--band); }
-.card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s; }
-.card:hover .card-img img { transform: scale(1.04); }
+/* contain + sin zoom: la foto se ve completa, tal como se subió */
+.card-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
 /* Sin foto: la cifra principal ocupa el espacio */
 .card-img.no-img { display: grid; place-items: center; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, var(--card)), var(--card)); }
 .card-img.no-img img { display: none; }
